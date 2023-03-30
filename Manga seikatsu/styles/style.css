@@ -1,0 +1,31 @@
+
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.img-carrusel {
+    width: 100vw;
+    height: 700px;
+}
+
+.carro {
+    margin-left: 10px;
+}
+
+nav {
+    height: 100px;
+    font-size: 20px;
+}
+.manga-containter{
+    margin: 30px;
+}
+#carouselExampleFade::before{
+    background: black;
+}
+#carrito{
+    color: white;
+    width: 20px;
+}
+/* linear-gradient(rgba(255, 255, 255, 0), rgba(23, 2, 41, 1)) */
