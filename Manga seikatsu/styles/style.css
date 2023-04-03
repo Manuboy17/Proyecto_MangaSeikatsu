@@ -28,4 +28,19 @@ nav {
     color: white;
     width: 20px;
 }
+.basket-2{
+    margin-left: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+.basket-2:hover {
+    text-decoration: none;
+}
+.agregar {
+    color: white;
+    text-decoration: none;
+}
+.agregar:hover {
+    text-decoration: none;
+}
 /* linear-gradient(rgba(255, 255, 255, 0), rgba(23, 2, 41, 1)) */

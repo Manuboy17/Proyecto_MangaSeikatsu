@@ -1,0 +1,49 @@
+nav {
+    height: 100px;
+    font-size: 20px;
+}
+.basket-2{
+    margin-left: 10px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    height: 80vh;
+}
+.pedido {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+.imagen {
+    width: 40%;
+    border: 2px solid white ;
+}
+.content {
+    align-self: center;
+}
+.content ul{
+    font-size: 20px;
+    list-style: none;
+}
+.item {
+    padding: 10px;
+}
+.pago {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.btn {
+    border-radius: 10px;
+}
+
+
