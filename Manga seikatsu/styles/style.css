@@ -1,10 +1,11 @@
 
 
 body {
-    font-family: sans-serif;
+    font-family: 'Bebas Neue', cursive;
     margin: 0;
     padding: 0;
 }
+
 .carousel{
     width: 95vw;
 }
@@ -22,7 +23,9 @@ body {
 nav {
     height: 100px;
     font-size: 20px;
+    z-index: 2;
 }
+
 .manga-containter{
     margin: 30px;
 }
@@ -48,4 +51,9 @@ nav {
 .agregar:hover {
     text-decoration: none;
 }
+
+.icon {
+    height: 80px;
+}
+
 /* linear-gradient(rgba(255, 255, 255, 0), rgba(23, 2, 41, 1)) */
