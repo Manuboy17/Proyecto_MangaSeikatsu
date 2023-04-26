@@ -5,9 +5,14 @@ body {
     margin: 0;
     padding: 0;
 }
+.carousel{
+    width: 95vw;
+}
+
+
 .img-carrusel {
     width: 100vw;
-    height: 700px;
+    height: 500px;
 }
 
 .carro {
