@@ -1,29 +1,23 @@
 body {
     font-family: 'Bebas Neue', cursive;
     margin: 0;
-    padding: 0;
+    padding: 0; 
 }
-
 .carousel{
     width: 95vw;
 }
-
-
 .img-carrusel {
     width: 100vw;
     height: 500px;
 }
-
 .carro {
     margin-left: 10px;
 }
-
 nav {
     height: 100px;
     font-size: 20px;
     z-index: 2;
 }
-
 .manga-containter{
     margin: 30px;
 }
@@ -74,4 +68,14 @@ nav {
       rgba(106, 17, 203, 1),
       rgba(37, 117, 252, 1)
     );
+}
+.login, .login > a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-right: 10px;
+}
 /* linear-gradient(rgba(255, 255, 255, 0), rgba(23, 2, 41, 1)) */
