@@ -79,3 +79,14 @@ nav {
     margin-right: 10px;
 }
 /* linear-gradient(rgba(255, 255, 255, 0), rgba(23, 2, 41, 1)) */
+.controlador{
+    padding: 5px;
+}
+
+label.error {
+    padding: 5px;
+    color: yellow;
+}
+input.error {
+    border: 10px solid yellow;
+}

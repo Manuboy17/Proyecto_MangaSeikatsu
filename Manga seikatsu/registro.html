@@ -23,9 +23,6 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/bootstrap-login-form.min.css" />
   </head>
   <body>
     <section class="vh-80 gradient-custom">
@@ -36,59 +33,63 @@
               <div class="card-body p-5 text-center">
                 <div class="mb-md-5 mt-md-4 ">
                   <h2 class="fw-bold mb-2 text-uppercase">Registrarse</h2>                 
+                  <form action="" id="RegForm">
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        type="text"
+                        id="typeNombre"
+                        placeholder="Nombre"
+                        name="regNombre"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typeNombre">Nombre</label>
+                    </div>
 
-                  <div class="form-outline form-white mb-4">
-                    <input
-                      type="text"
-                      id="typeNombre"
-                      placeholder="Nombre"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="typeNombre">Nombre</label>
-                  </div>
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        type="email"
+                        id="typeEmailReg"
+                        placeholder="Corrreo@gmail.com"
+                        name="regEmail"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typeEmailX">Correo</label>
+                    </div>
 
-                  <div class="form-outline form-white mb-4">
-                    <input
-                      type="email"
-                      id="typeEmailX"
-                      placeholder="Corrreo@gmail.com"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="typeEmailX">Correo</label>
-                  </div>
-
-                  <div class="form-outline form-white mb-4">
-                    <input
-                      type="password"
-                      id="typePasswordX"
-                      placeholder="Contraseña"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="typePasswordX"
-                      >Contraseña</label
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        type="password"
+                        id="typePassword"
+                        placeholder="Contraseña"
+                        name="regContraseña"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typePasswordX"
+                        >Contraseña</label
+                      >
+                    </div>
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        type="password"
+                        id="typePasswordConf"
+                        placeholder="Contraseña"
+                        name="contraseñaConf"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typePasswordX"
+                        >Confirma tu contraseña</label
+                      >
+                    </div>
+                    <button
+                      class="btn btn-outline-light btn-lg px-5"
+                      type="submit"
+                      id="regSub"
                     >
-                  </div>
-                  <div class="form-outline form-white mb-4">
-                    <input
-                      type="password"
-                      id="typePasswordX"
-                      placeholder="Contraseña"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="typePasswordX"
-                      >Confirma tu contraseña</label
-                    >
-                  </div>
-
-                  
-                  <button
-                    class="btn btn-outline-light btn-lg px-5"
-                    type="submit"
-                  >
-                    Registrar
-                  </button>
-                  <p class="small mb-5 pb-lg-2">
-                    <a class="text-white-50" href="login.html"
+                      Registrar
+                    </button>
+                </form>
+                  <p class="small mb-5 pb-lg-2 controlador">
+                    <a class="text-white-50 " href="login.html"
                       >¿Ya tienes una cuenta?</a
                     >
                   </p>
@@ -171,8 +172,14 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    
     <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+    <script src="js/validaciones.js"></script>
   </body>
 </html>

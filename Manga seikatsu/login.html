@@ -23,9 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
     <!-- MDB -->
-    <link rel="stylesheet" href="css/bootstrap-login-form.min.css" />
   </head>
   <body>
     <section class="vh-80 gradient-custom">
@@ -34,51 +32,55 @@
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
             <div class="card bg-dark text-white" style="border-radius: 1rem">
               <div class="card-body p-5 text-center">
-                <div class="mb-md-5 mt-md-4 ">
+                <div class="mb-md-5 mt-md-4">
                   <h2 class="fw-bold mb-2 text-uppercase">Inicio Sesion</h2>
                   <p class="text-white-50 mb-5">
                     Por favor ingresa tu usuario y contraseña
                   </p>
+                  <form action="" id="form">
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        type="email"
+                        id="typeEmailX"
+                        name="email"
+                        placeholder="Corrreo@gmail.com"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typeEmailX">Correo</label>
+                    </div>
 
-                  <div class="form-outline form-white mb-4">
-                    <input
-                      type="email"
-                      id="typeEmailX"
-                      placeholder="Corrreo@gmail.com"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="typeEmailX">Correo</label>
-                  </div>
-
-                  <div class="form-outline form-white mb-4">
-                    <input
-                      type="password"
-                      id="typePasswordX"
-                      placeholder="Contraseña"
-                      class="form-control form-control-lg"
-                    />
-                    <label class="form-label" for="typePasswordX"
-                      >Contraseña</label
+                    <div class="form-outline form-white mb-4">
+                      <input
+                        type="password"
+                        id="typePasswordX"
+                        placeholder="Contraseña"
+                        name="contraseña"
+                        class="form-control form-control-lg"
+                      />
+                      <label class="form-label" for="typePasswordX"
+                        >Contraseña</label
+                      >
+                    </div>
+                    <button
+                      class="btn btn-outline-light btn-lg px-5"
+                      type="submit"
+                      id="logSub"
                     >
-                  </div>
-
+                      Iniciar Sesion
+                    </button>
+                  </form>
                   <p class="small mb-5 pb-lg-2">
-                    <a class="text-white-50" href="#!"
+                    <a class="text-white-50 controlador" href="#!"
                       >¿Olvidaste tu contraseña?</a
                     >
                   </p>
-
-                  <button
-                    class="btn btn-outline-light btn-lg px-5"
-                    type="submit"
-                  >
-                    Iniciar Sesion
-                  </button>
                 </div>
                 <div>
-                  <p class="mb-0">
+                  <p class="mb-0 ">
                     ¿No tienes cuenta?
-                    <a href="registro.html" class="text-white-50 fw-bold">Registrate</a>
+                    <a href="registro.html" class="text-white-50 fw-bold"
+                      >Registrate</a
+                    >
                   </p>
                 </div>
               </div>
@@ -148,6 +150,7 @@
       </div>
       <!-- Copyright -->
     </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -158,8 +161,15 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <!-- Custom scripts -->
-    <script type="text/javascript"></script>
+
+    <script src="js/validaciones.js"></script>
   </body>
 </html>
