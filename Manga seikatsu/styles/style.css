@@ -6,6 +6,7 @@ body {
 
 .carousel{
     width: 95vw;
+    margin-left: 15px;
 }
 
 
@@ -13,7 +14,9 @@ body {
     width: 100vw;
     height: 500px;
 }
-
+.control{
+    text-decoration: none;
+}
 .carro {
     margin-left: 10px;
 }
@@ -31,19 +34,28 @@ nav {
     background: black;
 }
 #carrito{
-    color: white;
+    color: #fff;
     width: 20px;
 }
 .basket-2{
-    margin-left: 10px;
-    text-decoration: none;
-    text-align: center;
+    color: #30115e;
+    padding-top: 5px;
+    padding-left: 7px;
+    background-color: #fff;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    display: block;
+    transition: all 0.3s ease 0s;
 }
 .basket-2:hover {
+    color: #fff;
+    background-color: #ea39b8;   
     text-decoration: none;
 }
 .agregar {
-    color: white;
+    color: #fff;
     text-decoration: none;
 }
 .agregar:hover {
@@ -51,7 +63,7 @@ nav {
 }
 
 .icon {
-    height: 80px;
+    height: 50px;
 }
 
 .form-outline .form-control {
@@ -74,4 +86,3 @@ nav {
       rgba(106, 17, 203, 1),
       rgba(37, 117, 252, 1)
     );
-/* linear-gradient(rgba(255, 255, 255, 0), rgba(23, 2, 41, 1)) */
