@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./styles/bootswatch.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="styles/cards.css" />
+    <link rel="stylesheet" href="./styles/carritoNav.css">
     <script
       src="https://kit.fontawesome.com/928971cd2d.js"
       crossorigin="anonymous"
@@ -103,6 +104,24 @@
                 />
               </svg>
             </a>
+            <!--carrito icono-->
+         <i class='bx bx-shopping-bag' id="cart-icon"></i>
+         <!-- Carrito -->
+         <div class="cart">
+          <h2 class="cart-title">Tu Carrito</h2>
+          <div class="cart-content">
+
+          </div>
+          <!-- Total -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!-- Boton Comprar -->
+          <button type="button" class="btn-buy">Comprar</button>
+           <!-- Cerrar Carrito -->
+           <i class='bx bx-x' id="close-cart"></i>
+
           </div>
         </div>
       </nav>
@@ -516,36 +535,38 @@
         
           <div class="col mb-4">
             <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/one_punch_man_1.jpg"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/one_punch_man_2.jpg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">one punch man tomo 1</h5>
-                <div class="price">$8.000</div>
+              <div class="product-box">
+                <div class="product-image">
+                  <a href="#" class="image">
+                    <img
+                      class="pic-1"
+                      src="img/one_punch_man_1.jpg"
+                    />
+                    <img
+                      class="pic-2"
+                      src="img/one_punch_man_2.jpg"
+                    />
+                  </a>
+                  <ul class="product-links">
+                    <li>
+                      <a href="#"><i class="fa fa-shopping-cart add-cart"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="far fa-heart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-content card-body">
+                  <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="far fa-star"></li>
+                  </ul>
+                  <h5 class="product-title">one punch man tomo 1</h5>
+                  <div class="price">$8000</div>
+                </div>
               </div>
             </div>
           </div>
@@ -629,5 +650,7 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
+
+    <script src="js/carrito.js"></script>
   </body>
 </html>
