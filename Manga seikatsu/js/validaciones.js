@@ -67,8 +67,6 @@ $('#RegForm').validate({
 })
 
 
-
-
 $('#logSub').click(function() {
     if($('#form').valid() == false){
         return
