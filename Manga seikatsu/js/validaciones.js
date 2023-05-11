@@ -62,6 +62,43 @@ $('#RegForm').validate({
             minlength: 4,
             maxlength: 20,
             equalTo: '#typePassword'
+        },
+        zipCode: {
+            required: true,
+            minlength: 6,
+            maxlength: 7
+        }
+    }
+})
+
+$('#form-pago').validate({
+    rules: {
+        emailCarrito: {
+            required: true,
+            email: true,
+            validarCorreo: 'gmail.com'
+        },
+        nroTarjeta: {
+            required: true,
+            minlength: 16,
+            maxlength: 16
+        },
+        nombreDueño: {
+            required: true,
+            minlength: 4,
+            maxlength: 25
+        },
+        zipCode: {
+            required: true,
+            minlength: 7,
+            maxlength: 7
+        }
+    },
+    errorPlacement: function(error, element) {
+        if (element.attr("name") == "fechaVencimiento") {
+            error.insertAfter(element);
+        } else {
+            error.insertAfter(element.parent());
         }
     }
 })
@@ -82,4 +119,16 @@ $('#regSub').click(function() {
     let correo = $('#typeEmailReg').val()
     let contraReg = $('#typePassword').val()
     let contraConf = $('#typePasswordConf').val()
+})
+
+$('#btn-pago').click(function() {
+    if($('#form-pago').valid() == false){
+        return
+    }
+    let emailPago = $('#emailCarrito') .val()
+    let nroTarjeta = $('#nroTarjeta') .val()
+    let fechaVencimiento = $('#fechaVencimiento') .val()
+    let cvv = $('#cvv') .val()
+    let nombreDueño = $('#nombreDueño') .val()
+
 })
