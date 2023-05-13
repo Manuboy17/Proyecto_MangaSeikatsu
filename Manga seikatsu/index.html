@@ -1,89 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manga Seikatsu</title>
+    <link rel="shortcut icon" href="img/Logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/bootswatch.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="styles/cards.css" />
+    <link rel="stylesheet" href="./styles/carritoNav.css">
+    <script
+      src="https://kit.fontawesome.com/928971cd2d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manga Seikatsu</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./styles/bootswatch.css">
-  <link rel="stylesheet" href="./styles/style.css">
-  <script src="https://kit.fontawesome.com/928971cd2d.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <img src="img/Logo.png" class="icon" alt="Manga seikatsu" />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarColor02"
+            aria-controls="navbarColor02"
+            aria-expanded="true"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-</head>
-
-<body>
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container-fluid">
-      <img src="img/Logo.png" class="icon" alt="Manga seikatsu" />
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
-        aria-controls="navbarColor02" aria-expanded="true" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse bg-dark" id="navbarColor02">
-        <ul class="navbar-nav me-auto p-3">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Inicio
+          <div class="collapse navbar-collapse bg-dark" id="navbarColor02">
+            <ul class="navbar-nav me-auto p-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="#"
+                  >Inicio
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Ofertas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">Nosotros</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Categorias</a
+                >
+                <div class="dropdown-menu">
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Shonen</a>
+                  <a class="dropdown-item" href="#">Shoujo</a>
+                  <a class="dropdown-item" href="#">Seinen</a>
+                  <a class="dropdown-item" href="#">Mecha</a>
+                  <a class="dropdown-item" href="#">Spokon</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </li>
+            </ul>
+            <form class="d-flex mb-3 ">
+              <input
+                class="form-control  me-sm-2"
+                type="search"
+                placeholder="Search"
+              />
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                Search
+              </button>
+            </form>
+            <a href="carrito.html" class="basket-2 ml-3 mb-3">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-bag"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                />
+              </svg>
             </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link disabled" href="#">Ofertas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#footer">Nosotros</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-              aria-expanded="false">Categorias</a>
-            <div class="dropdown-menu">
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Shonen</a>
-              <a class="dropdown-item" href="#">Shoujo</a>
-              <a class="dropdown-item" href="#">Seinen</a>
-              <a class="dropdown-item" href="#">Mecha</a>
-              <a class="dropdown-item" href="#">Spokon</a>
-              <div class="dropdown-divider"></div>
-            </div>
-          </li>
-        </ul>
-        <div class="login">
-          <a href="login.html">
-            <i class="fa-regular fa-user"></i>
-          </a>
+            <!--carrito icono-->
+         <i class='bx bx-shopping-bag' id="cart-icon"></i>
+         <!-- Carrito -->
+         <div class="cart">
+          <h2 class="cart-title">Tu Carrito</h2>
+          <div class="cart-content">
+
+          </div>
+          <!-- Total -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+          </div>
+          <!-- Boton Comprar -->
+          <button type="button" class="btn-buy">Comprar</button>
+           <!-- Cerrar Carrito -->
+           <i class='bx bx-x' id="close-cart"></i>
+
+          </div>
         </div>
-        <form class="d-flex">
-          <input class="form-control me-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <a href="carrito.html" class="basket-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-basket2"
-            viewBox="0 0 16 16">
-            <path
-              d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z" />
-            <path
-              d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z" />
-          </svg>
-        </a>
+      </nav>
+    </header>
 
-      </div>
-    </div>
-  </nav>
-</header>
 
-  <main>
-    <div
+    <main>
+      <div
         id="carouselExampleControls"
-        class="carousel slide carousel-fade"
+        class="carousel slide carousel-fade justify-content-center"
         data-bs-ride="carousel"
       >
-        <div class="carousel-inner container-fluid ">
+        <div class="carousel-inner container-fluid">
           <div class="carousel-item active">
             <img
               src="./img/Los-mangas-mas-importantes-para-la-comunidad-en-Japon-.webp"
@@ -95,7 +146,11 @@
             <img src="./img/Manga-1-min.jpg" class="img-carrusel" alt="..." />
           </div>
           <div class="carousel-item">
-            <img src="./img/Mangas vendidos 2022.png" class="img-carrusel" alt="..." />
+            <img
+              src="./img/Mangas vendidos 2022.png"
+              class="img-carrusel"
+              alt="..."
+            />
           </div>
         </div>
         <button
@@ -118,187 +173,484 @@
         </button>
       </div>
 
-    <br>
+      <br />
 
-    <section class="manga-containter">
-      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5">
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="./img/Manga_BANANA FISH_Panini ES.webp" class="card-img-top" alt="Manga_BANANA FISH_Panini" />
-            <div class="card-body">
-              <h5 class="card-title">BANANA FISH - Panini</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
+      <section class="manga-containter">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center">
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/chainsaw_1.webp"
+                  />
+                  <img class="pic-2" src="img/chainsaw_2.jpg" />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">CHAINSAW MAN</h5>
+                <div class="price">$8.000</div>
+              </div>
             </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="producto_page7.html">Agregar</a>
-            </button>
           </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="./img/Manga_CHAINSAW MAN_Norma Editorial.webp" class="card-img-top"
-              alt="Manga_CHAINSAW MAN_Norma Editorial" />
-            <div class="card-body">
-              <h5 class="card-title">CHAINSAW MAN - Norma Editorial</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar"  href="product_page4.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="./img/Manga_GOKUSHUFUDO (YAKUZA AMO DE CASA)_Ivrea AR.webp" class="card-img-top"
-              alt="Manga_GOKUSHUFUDO" />
-            <div class="card-body">
-              <h5 class="card-title">GOKUSHUFUDO</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="producto_page3.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="./img/Manga_HELLSING EDICION COLECCIONISTA_Norma Editorial.webp" class="card-img-top"
-              alt="Manga_HELLSING EDICION COLECCIONISTA_Norma Editorial" />
-            <div class="card-body">
-              <h5 class="card-title">HELLSING EDICION COLECCIONISTA - Norma Editorial</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="product_page9.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="./img/Manga_LA ESPADA DEL INMORTAL KANZENBAN_Planeta.webp" class="card-img-top"
-              alt="Manga_LA ESPADA DEL INMORTAL KANZENBAN_Planeta" />
-            <div class="card-body">
-              <h5 class="card-title">LA ESPADA DEL INMORTAL KANZENBAN - Planeta</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="producto_page8.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="./img/Manga_PERRO QUE LADRA NO MUERDE_Ivrea AR.webp" class="card-img-top"
-              alt="Manga_PERRO QUE LADRA NO MUERDE_Ivrea AR" />
-            <div class="card-body">
-              <h5 class="card-title">PERRO QUE LADRA NO MUERDE - Ivrea AR</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="producto_page6.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="./img/Manga_ROOSTER FIGHTER_Ivrea ES.webp" class="card-img-top"
-              alt="Manga_ROOSTER FIGHTER_Ivrea ES" />
-            <div class="card-body">
-              <h5 class="card-title">ROOSTER FIGHTER - Ivrea ES</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="product_page2.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="img/blulock.jpg" class="card-img-top" alt="Manga_ROOSTER FIGHTER_Ivrea ES" />
-            <div class="card-body">
-              <h5 class="card-title">BLUE LOCK - Shonen Magazine Comics</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="product_page.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 border-light mb-3">
-            <img src="img/slime.jpg" class="card-img-top" alt="Manga_ROOSTER FIGHTER_Ivrea ES" />
-            <div class="card-body">
-              <h5 class="card-title">TENSEI SHITARA SLIME DATTA KEN - GC NOVELS</h5>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <button type="button" class="btn btn-secondary">
-              <a class="agregar" href="product_page5.html">Agregar</a>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="text-center text-white" style="background-color: rgba(23, 2, 41, 1);">
-    <!-- Grid container -->
-    <div class="container pt-4">
-      <!-- Section: Social media -->
-      <a id="footer"></a>
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
-          data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/gokushufudo_1.webp"
+                  />
+                  <img class="pic-2" src="img/gokushufudo_2.jpg" />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">GOKUSHUFUDO</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
 
-        <!-- Twitter -->
-        <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
-          data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/hellsing_1.webp"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/hellsing_2.jpeg"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">HELLSING EDICION COLECCIONISTA</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
 
-        <!-- Instagram -->
-        <a class="btn btn-link btn-floating btn-lg text-light m-1" href="#!" role="button"
-          data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/kanzenban_1.webp"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/kanzenban_2.jpg"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">LA ESPADA DEL INMORTAL KANZENBAN</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
 
-        <!-- Github -->
-        <a class="btn btn-link btn-floating btn-lg text-light m-1"
-          href="https://github.com/Manuboy17/Proyecto_MangaSeikatsu.git" target="_blank" role="button"
-          data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/perro_1.webp"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/perro_2.jpeg"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">PERRO QUE LADRA NO MUERDE</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
+
+        
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/rooster_2.jpg"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/rooster_2.webp"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">ROOSTER FIGHTER</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/blulock_1.jpg"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/blulock_2.jpg"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">BLUE LOCK</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/slime_1.jpg"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/slime_2.jpg"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">TENSEI SHITARA SLIME DATTA KEN</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/nana_1.webp"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/nana_2.jpg"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                </ul>
+                <h5 class="card-title">NANA TOMO 1</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="#" class="image">
+                  <img
+                    class="pic-1"
+                    src="img/sidonia_1.webp"
+                  />
+                  <img
+                    class="pic-2"
+                    src="img/sidonia_2.jpg"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li>
+                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="far fa-star"></li>
+                </ul>
+                <h5 class="card-title">sidonia no kishi</h5>
+                <div class="price">$8.000</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col mb-4">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-box">
+                <div class="product-image">
+                  <a href="#" class="image">
+                    <img
+                      class="pic-1"
+                      src="img/one_punch_man_1.jpg"
+                    />
+                    <img
+                      class="pic-2"
+                      src="img/one_punch_man_2.jpg"
+                    />
+                  </a>
+                  <ul class="product-links">
+                    <li>
+                      <a href="#"><i class="fa fa-shopping-cart add-cart"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="far fa-heart"></i></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-content card-body">
+                  <ul class="rating">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="far fa-star"></li>
+                  </ul>
+                  <h5 class="product-title">one punch man tomo 1</h5>
+                  <div class="price">$8000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+        
+        
+        </div>
       </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
+    </main>
+        
 
-    <!-- Copyright -->
-    <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2023 Copyright:
-      <a class="text-light" href="#">MangaSeikatsu.com</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-    crossorigin="anonymous"></script>
 
-</body>
+    <footer
+      class="text-center text-white"
+      style="background-color: rgba(23, 2, 41, 1)"
+    >
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <!-- Section: Social media -->
+        <a id="footer"></a>
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
 
+          <!-- Twitter -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <!-- Instagram -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="#!"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <!-- Github -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="https://github.com/Manuboy17/Proyecto_MangaSeikatsu.git"
+            target="_blank"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center text-light p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        © 2023 Copyright:
+        <a class="text-light" href="#">MangaSeikatsu.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/carrito.js"></script>
+  </body>
 </html>
