@@ -39,8 +39,8 @@
     "tamano": "14,8 x 21",
     "paginas": "392",
     "descripcion": "Desde hace siglos, la organización Hellsing trabaja desde las sombras para proteger a la humanidad de todo tipo de amenazas sobrenaturales, incluidos los ataques de los vampiros. El secreto de su éxito es que cuentan entre sus filas nada más y nada menos que con Alucard, un vampiro aparentemente invulnerable que, aun así, tendrá que luchar con uñas y dientes para salir victorioso ante el ataque de las hordas de muertos vivientes…",
-    "pic1": "./img/hellsing_1.webp",
-    "pic2": "./img/hellsing_2.jpg"
+    "pic1": "img/hellsing_1.webp",
+    "pic2": "img/hellsing_2.jpeg"
   },
   {
     "titulo": "la espada del inmortal kanzenban 1",
@@ -55,6 +55,20 @@
     "descripcion": "La historia está ambientada en el Japón de la era Edo. El protagonista, Manji, es un guerrero que tiene una gran ventaja sobre sus rivales: ninguna herida lo puede matar. En el pasado mató a otros 100 samuráis, entre ellos el marido de su hermana. ",
     "pic1": "./img/kanzenban_1.webp",
     "pic2": "./img/kanzenban_2.jpg"
+  },
+  {
+    "titulo": "PERRO QUE LADRA NO MUERDE",
+    "codigo": "9788418271922",
+    "rating": "5",
+    "editorial": "Ivrea Argentina",
+    "precio": "8.000",
+    "autor": "Shinshi Nakai",
+    "formato": "Tapa blanda",
+    "tamano": "13 × 1 × 17",
+    "paginas": "190",
+    "descripcion": "Kenji va al instituto y no para de meterse en peleas con sus colegas. Lo que no sabe es que su vida está a punto de cambiar cuando se reencuentre con Yuu, su amigo de la infancia. Lo recuerda como un chaval pequeño y que se parecía a su perro, incluso le había puesto de mote un nombre típico de mascota. Pero hoy en día es todo distinto: Yuu es un chico alto, guapo y no hay quien le tosa.Su presencia hará que Kenji empiece a sentir algo nuevo y despertará su más lado más calenturiento. También, de repente, parece que el protagonista se vuelve un objeto de deseo de todos los hombres con los que se cruza. ¿Pero será Kenji capaz de aceptar la nueva situación y entender lo que le está pasando?",
+    "pic1": "img/perro_1.webp",
+    "pic2": "img/perro_2.jpeg"
   },
   {
     "titulo": "Rooster fighter",
@@ -81,8 +95,8 @@
     "tamano": "13 x 17",
     "paginas": "208",
     "descripcion": "Un manga de fútbol que arrasa en Japón. El protagonista ha ido a BLUE LOCK para intentar cambiar su vida, pero, por el momento, está teniendo bastantes problemas para adaptarse al nivel del programa. Su arma es su impresionante percepción espacial.",
-    "pic1": "./img/bluelock_1.jpg",
-    "pic2": "./img/bluelock_2.jpg"
+    "pic1": "img/blulock_1.jpg",
+    "pic2": "img/blulock_2.jpg"
   },
   {
     "titulo": "Tensei Shitara Slime Datta Ken 1",
@@ -109,8 +123,8 @@
     "tamano": "13 x 17",
     "paginas": "240",
     "descripcion": "Nana Oosaki y Nana Komatsu son dos chicas de carácter completamente opuesto pero con más que el nombre en común. Se conocen en un tren camino a Tokyo, a donde se están yendo a vivir para cumplir aquello que quieren.",
-    "pic1": "./img/slime_1.jpg",
-    "pic2": "./img/slime_2.jpg"
+    "pic1": "img/nana_1.webp",
+    "pic2": "img/nana_2.jpg"
   },
   {
     "titulo": "Sidonia no kishi 1",

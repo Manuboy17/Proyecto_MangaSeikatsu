@@ -13,7 +13,7 @@ function crearCard(data) {
         <div class="product-grid card h-100 border-light mb-3">
             <div class="product-image">
                 <a href="#" class="image">
-                <img class="pic-1"
+                <img class="pic-1" alt="${data.titulo}"
                     src="${data.pic1}"
                 />
                 <img class="pic-2" 
@@ -36,7 +36,7 @@ function crearCard(data) {
                     <li class="fa fa-star"></li>
                     <li class="far fa-star"></li>
                 </ul>
-                <h5 class="card-title">${data.titulo}</h5>
+                <h5 class="card-title" id="nombreManga">${data.titulo}</h5>
                 <div class="price">$${data.precio} </div>
             </div>
         </div>

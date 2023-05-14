@@ -8,10 +8,12 @@
     align-items: center;
 
 }
-
+.cont-img {
+    padding: 10px;
+}
 .product{
-    padding: 80px;
-    width: 90%;
+    margin-top: 100px;
+    width: 60%;
 }
 .item {
     padding-left: 80px;
