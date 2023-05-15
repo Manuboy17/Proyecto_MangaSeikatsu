@@ -12,16 +12,17 @@ function crearCard(data) {
     <div class="col mb-4">
         <div class="product-grid card h-100 border-light mb-3">
             <div class="product-image">
-                <a href="#" class="image">
-                <img class="pic-1" alt="${data.titulo}"
-                    src="${data.pic1}"
-                />
-                <img class="pic-2" 
-                    src="${data.pic2}" />
+                <a href="product_page.html" class="image" >
+                    <img class="pic-1" alt="${data.titulo}"
+                        src="${data.pic1}"
+                    />
+                    <img class="pic-2" id="image-event" alt="${data.titulo}"
+                        src="${data.pic2}" 
+                    />
                 </a>
                 <ul class="product-links">
                     <li>
-                        <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                        <a href="#"><i class="fa fa-shopping-cart add-cart"></i></a>
                     </li>
                     <li>
                         <a href="#"><i class="far fa-heart"></i></a>

@@ -76,13 +76,15 @@ function quantityChanged(event) {
 // Agregar al Carro
 function addCartClicked(event) {
   var button = event.target;
-  var shopProducts = button.parentElement;
-  var title = shopProducts.getElementsByClassName("product-title")[0].innerText;
-  var price = shopProducts.getElementsByClassName("price")[0].innerText;
-  var productImg = shopProducts.getElementsByClassName("product-image")[0].src;
+  var shopProducts = button.closest(".product-grid");
+  var title = shopProducts.querySelector(".card-title").innerText;
+  var price = shopProducts.querySelector(".price").innerText;
+  var productImg = shopProducts.querySelector(".pic-1").src;
   addProductToCart(title, price, productImg);
   updatetotal();
 }
+
+
 function addProductToCart(title, price, productImg) {
   var cartShopBox = document.createElement("div");
   cartShopBox.classList.add("cart-box");

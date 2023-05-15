@@ -12,13 +12,16 @@
     padding: 10px;
 }
 .product{
-    margin-top: 100px;
     width: 60%;
+    
 }
 .item {
-    padding-left: 80px;
 }
 
 .detalle-precio , .btn-carrito {
     padding-top: 80px;
+}
+#cont-manga{
+    margin-top: 130px;
+    margin-left: 20px;
 }
