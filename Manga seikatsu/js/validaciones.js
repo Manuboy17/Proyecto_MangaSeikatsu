@@ -88,6 +88,12 @@ $('#form-pago').validate({
             minlength: 4,
             maxlength: 25
         },
+        region: {
+            required: true
+        },
+        comuna: {
+            required: true
+        },
         zipCode: {
             required: true,
             minlength: 7,

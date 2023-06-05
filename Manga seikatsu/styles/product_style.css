@@ -8,15 +8,20 @@
     align-items: center;
 
 }
-
+.cont-img {
+    padding: 10px;
+}
 .product{
-    padding: 80px;
-    width: 90%;
+    width: 60%;
+    
 }
 .item {
-    padding-left: 80px;
 }
 
 .detalle-precio , .btn-carrito {
     padding-top: 80px;
+}
+#cont-manga{
+    margin-top: 130px;
+    margin-left: 20px;
 }

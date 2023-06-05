@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="./styles/bootswatch.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="styles/cards.css" />
-    <link rel="stylesheet" href="./styles/carritoNav.css">
     <script
       src="https://kit.fontawesome.com/928971cd2d.js"
       crossorigin="anonymous"
@@ -59,7 +58,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Nosotros</a>
               </li>
-              <li class="nav-item dropdown">
+              <!-- <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   data-bs-toggle="dropdown"
@@ -78,16 +77,16 @@
                   <a class="dropdown-item" href="#">Spokon</a>
                   <div class="dropdown-divider"></div>
                 </div>
-              </li>
+              </li> -->
             </ul>
             <form class="d-flex mb-3 ">
               <input
                 class="form-control  me-sm-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Buscar"
               />
               <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                Search
+                Buscar
               </button>
             </form>
             <a href="carrito.html" class="basket-2 ml-3 mb-3">
@@ -104,24 +103,6 @@
                 />
               </svg>
             </a>
-            <!--carrito icono-->
-         <i class='bx bx-shopping-bag' id="cart-icon"></i>
-         <!-- Carrito -->
-         <div class="cart">
-          <h2 class="cart-title">Tu Carrito</h2>
-          <div class="cart-content">
-
-          </div>
-          <!-- Total -->
-          <div class="total">
-            <div class="total-title">Total</div>
-            <div class="total-price">$0</div>
-          </div>
-          <!-- Boton Comprar -->
-          <button type="button" class="btn-buy">Comprar</button>
-           <!-- Cerrar Carrito -->
-           <i class='bx bx-x' id="close-cart"></i>
-
           </div>
         </div>
       </nav>
@@ -175,405 +156,9 @@
 
       <br />
 
-      <section class="manga-containter">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center">
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/chainsaw_1.webp"
-                  />
-                  <img class="pic-2" src="img/chainsaw_2.jpg" />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">CHAINSAW MAN</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
+      <section class="manga-containter" >
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center" id="card-container">
 
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/gokushufudo_1.webp"
-                  />
-                  <img class="pic-2" src="img/gokushufudo_2.jpg" />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">GOKUSHUFUDO</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/hellsing_1.webp"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/hellsing_2.jpeg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">HELLSING EDICION COLECCIONISTA</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/kanzenban_1.webp"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/kanzenban_2.jpg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">LA ESPADA DEL INMORTAL KANZENBAN</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/perro_1.webp"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/perro_2.jpeg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">PERRO QUE LADRA NO MUERDE</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-
-        
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/rooster_2.jpg"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/rooster_2.webp"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">ROOSTER FIGHTER</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-        
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/blulock_1.jpg"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/blulock_2.jpg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">BLUE LOCK</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/slime_1.jpg"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/slime_2.jpg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">TENSEI SHITARA SLIME DATTA KEN</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/nana_1.webp"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/nana_2.jpg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                </ul>
-                <h5 class="card-title">NANA TOMO 1</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-image">
-                <a href="#" class="image">
-                  <img
-                    class="pic-1"
-                    src="img/sidonia_1.webp"
-                  />
-                  <img
-                    class="pic-2"
-                    src="img/sidonia_2.jpg"
-                  />
-                </a>
-                <ul class="product-links">
-                  <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-content card-body">
-                <ul class="rating">
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="fa fa-star"></li>
-                  <li class="far fa-star"></li>
-                </ul>
-                <h5 class="card-title">sidonia no kishi</h5>
-                <div class="price">$8.000</div>
-              </div>
-            </div>
-          </div>
-        
-          <div class="col mb-4">
-            <div class="product-grid card h-100 border-light mb-3">
-              <div class="product-box">
-                <div class="product-image">
-                  <a href="#" class="image">
-                    <img
-                      class="pic-1"
-                      src="img/one_punch_man_1.jpg"
-                    />
-                    <img
-                      class="pic-2"
-                      src="img/one_punch_man_2.jpg"
-                    />
-                  </a>
-                  <ul class="product-links">
-                    <li>
-                      <a href="#"><i class="fa fa-shopping-cart add-cart"></i></a>
-                    </li>
-                    <li>
-                      <a href="#"><i class="far fa-heart"></i></a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="product-content card-body">
-                  <ul class="rating">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="far fa-star"></li>
-                  </ul>
-                  <h5 class="product-title">one punch man tomo 1</h5>
-                  <div class="price">$8000</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-        
-        
-        
         </div>
       </section>
     </main>
@@ -650,7 +235,7 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
-
-    <script src="js/carrito.js"></script>
+    <script src="js/mangas.js"></script>
+    <script src="js/descManga.js"></script>
   </body>
 </html>
