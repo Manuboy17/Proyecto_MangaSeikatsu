@@ -118,6 +118,7 @@ a {
 }
 
 .close {
+    cursor: pointer;
     margin-left: auto;
     font-size: 0.7rem;
 }

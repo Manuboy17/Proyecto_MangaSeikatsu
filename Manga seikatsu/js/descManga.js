@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       const contenedor = document.querySelector("#cont-manga");
       var cards = document.querySelectorAll(".card");
-      cards.forEach(function (card) {
+      cards.forEach(function(card) {
         card.addEventListener("click", function () {
           var cardName = this.querySelector(".card-title").textContent;
 
@@ -96,9 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
   
             <span href="#">mangaseikatsu.com </span>
   
-            <div class="btn-carrito">
-              <button type="button" class="btn btn-secondary">
-                <a style="text-decoration: none; color: #fff;" href="carrito.html">AGREGAR AL CARRITO</a>
+            <div class="btn-carrito" >
+              <button id="btn-compra" type="button" class="btn btn-secondary">
+                <a style="text-decoration: none; color: #fff;" href="#">AGREGAR AL CARRITO</a>
               </button>
             </div>
           </div>

@@ -9,7 +9,7 @@ fetch('anime.json')
     })
 function crearCard(data) {
   return `
-    <div class="col mb-4">
+    <div class="col mb-4" id="${data.titulo}">
         <div class="product-grid card h-100 border-light mb-3">
             <div class="product-image">
                 <a href="product_page.html" class="image" >
@@ -21,8 +21,8 @@ function crearCard(data) {
                     />
                 </a>
                 <ul class="product-links">
-                    <li>
-                        <a href="#"><i class="fa fa-shopping-cart add-cart"></i></a>
+                    <li class="add-cart">
+                        <a  href="#${data.titulo}" ><i class="fa fa-shopping-cart add-cart"></i></a>
                     </li>
                     <li>
                         <a href="#"><i class="far fa-heart"></i></a>
