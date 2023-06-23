@@ -14,7 +14,6 @@ function asignarCodigo(data, valorSeleccionado) {
 fetch(ulrRegion)
     .then(res => res.json())
     .then(data => {
-        
         for(let i of data["regions"]){
             const option = document.createElement('option')
             option.value = i.regionName
@@ -33,7 +32,6 @@ fetch(ulrRegion)
                 fetch(`https://testservices.wschilexpress.com/georeference/api/v1.0/coverage-areas?RegionCode=${codigo}&type=1`)
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
                         for(let i of data["coverageAreas"]){
                             const option = document.createElement('option')
                             option.value = i.countyName

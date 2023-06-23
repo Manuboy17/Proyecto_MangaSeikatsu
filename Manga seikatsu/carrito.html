@@ -117,31 +117,12 @@
               </div>
             </div>
           </div>
-          <div class="row border-top border-bottom">
-            <div class="row main align-items-center">
-              <div class="col-2">
-                <img
-                  class="img-fluid"
-                  src="../Manga seikatsu/img/blulock.jpg"
-                />
-              </div>
-              <div class="col">
-                <div class="row text-muted">Blue Lock</div>
-                <div class="row">Volumen 1</div>
-                <div class="row">Editorial Planeta Comic</div>
-              </div>
-              <div class="col ">
-                <a class= "min" href="#">-</a><a href="#" class="border">1</a
-                ><a class="plus" href="#">+</a>
-              </div>
-              <div class="col">
-                $8.000 <span class="close">&#10005;</span>
-              </div>
-            </div>
+          <div class="row border-top border-bottom" id="detail-cart">
+            
           </div>
 
           <div class="back-to-shop">
-            <a href="#">&leftarrow;
+            <a href="index.html">&leftarrow;
               <span >Volver a comprar</span>
             </a>
           </div>
@@ -181,27 +162,16 @@
                                 </select>
                             </div>
                             
-                            <div class="d-flex flex-column dis">
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p>Subtotal</p>
-                                    <p><span class="fas fa-dollar-sign"></span>33.00</p>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p> IVA<span>(19%)</span></p>
-                                    <p><span class="fas fa-dollar-sign"></span>2.80</p>
-                                </div>        
+                            <div id="subtotal" class="d-flex flex-column dis subtotal"> 
+
                             </div>
                         </div>
                     </div>
                 </form>
 
           
-          <div
-            class="row"
-            style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
-          >
-            <div class="col">TOTAL</div>
-            <div class="col text-right">$8.000</div>
+          <div id="total" class="row total" style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0">
+            
           </div>
 
           <button class="btn" type="submit" id="btn-pago">PAGAR</button>
@@ -210,7 +180,9 @@
       </div>
     </div>
 
-    <div></div>
+    <div>
+
+    </div>
 
     <footer
       class="text-center text-white"
@@ -292,5 +264,6 @@
 
     <script src="js/apiChileExpress.js"></script>
     <script src="js/validaciones.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>
