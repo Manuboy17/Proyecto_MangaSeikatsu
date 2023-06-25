@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -32,7 +33,11 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <img src="{% static 'Mangas/img/Logo.png' %}" class="icon" alt="Manga seikatsu" />
+          <img
+            src="{% static 'Mangas/img/Logo.png' %}"
+            class="icon"
+            alt="Manga seikatsu"
+          />
           <button
             class="navbar-toggler"
             type="button"
@@ -48,7 +53,7 @@
           <div class="collapse navbar-collapse bg-dark" id="navbarColor02">
             <ul class="navbar-nav me-auto p-3">
               <li class="nav-item">
-                <a class="nav-link active" href="#"
+                <a class="nav-link active" href="{% url 'index' %}"
                   >Inicio
                   <span class="visually-hidden">(current)</span>
                 </a>
@@ -80,9 +85,9 @@
                 </div>
               </li> -->
             </ul>
-            <form class="d-flex mb-3 ">
+            <form class="d-flex mb-3">
               <input
-                class="form-control  me-sm-2"
+                class="form-control me-sm-2"
                 type="search"
                 placeholder="Buscar"
               />
@@ -90,7 +95,7 @@
                 Buscar
               </button>
             </form>
-            <a href="#" class="basket-2 ml-3 mb-3">
+            <a href="{% url 'carrito'%}" class="basket-2 ml-3 mb-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -109,7 +114,6 @@
       </nav>
     </header>
 
-
     <main>
       <div
         id="carouselExampleControls"
@@ -125,7 +129,11 @@
             />
           </div>
           <div class="carousel-item">
-            <img src="{% static 'Mangas/img/Manga-1-min.jpg' %}" class="img-carrusel" alt="..." />
+            <img
+              src="{% static 'Mangas/img/Manga-1-min.jpg' %}"
+              class="img-carrusel"
+              alt="..."
+            />
           </div>
           <div class="carousel-item">
             <img
@@ -157,13 +165,52 @@
 
       <br />
 
-      <section class="manga-containter" >
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center" id="card-container">
-          
+      <section class="manga-containter">
+        <div
+          class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center"
+          id="card-container"
+        >
+          {% for manga in mangas%}
+          <div class="col mb-4" id="{{manga.titulo}}">
+            <div class="product-grid card h-100 border-light mb-3">
+              <div class="product-image">
+                <a href="{% url 'manga' manga.codigo %}" class="image">
+                  <img
+                    class="pic-1"
+                    alt="{{manga.titulo}}"
+                    src="{{manga.pic1.url}}"
+                  />
+                  <img
+                    class="pic-2"
+                    id="image-event"
+                    alt="{{manga.titulo}}"
+                    src="{{manga.pic2.url}}"
+                  />
+                </a>
+                <ul class="product-links">
+                  <li class="add-cart">
+                    <a href=""><i class="fa fa-shopping-cart add-cart"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="product-content card-body">
+                <ul class="rating">
+                  
+                </ul>
+                <h5 class="card-title" id="nombreManga">{{manga.titulo}}</h5>
+                <div class="price">${{manga.precio}}</div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
         </div>
       </section>
     </main>
-  
+
     <footer
       class="text-center text-white"
       style="background-color: rgba(23, 2, 41, 1)"
@@ -234,5 +281,7 @@
       integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
+
+    <script src="{% static 'Mangas/js/rating.js' %}"></script>
   </body>
 </html>
