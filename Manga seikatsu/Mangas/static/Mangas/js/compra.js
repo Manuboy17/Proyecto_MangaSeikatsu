@@ -20,9 +20,19 @@ cards.forEach(function (card) {
     if (cartItems) {
       cart = JSON.parse(cartItems);
     }
-    cart.push(cartObject);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    console.log(cart);
+    // Verificar si el manga ya está en el carrito
+    var mangaExists = cart.some(function (item) {
+      return item.titulo === titulo;
+    });
+
+    if (mangaExists) {
+      // Mostrar la alerta de que el manga ya está en el carrito
+      alert("¡El manga ya está en el carrito!");
+    } else {
+      cart.push(cartObject);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      console.log(cart);  
+    }
   });
 });
 
