@@ -30,7 +30,6 @@ function updateCart() {
 
 document.addEventListener("DOMContentLoaded", function () {
   updateCart();
-
   containerCart.addEventListener("click", function (event) {
     if (event.target.classList.contains("min")) {
       event.preventDefault();
@@ -43,16 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       centerValue.innerText = value.toString();
 
-      // Obtener el índice del elemento en cartItems
       const index = Array.from(containerCart.children).indexOf(container.parentNode);
 
-      // Actualizar la cantidad en cartItems
       if (index !== -1 && index < cartItems.length) {
         cartItems[index].cantidad = value;
         localStorage.setItem("cart", JSON.stringify(cartItems));
       }
 
-      // Actualizar el carrito
       updateCart();
     } else if (event.target.classList.contains("plus")) {
       event.preventDefault();
@@ -65,16 +61,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       centerValue.innerText = value.toString();
 
-      // Obtener el índice del elemento en cartItems
       const index = Array.from(containerCart.children).indexOf(container.parentNode);
 
-      // Actualizar la cantidad en cartItems
       if (index !== -1 && index < cartItems.length) {
         cartItems[index].cantidad = value;
         localStorage.setItem("cart", JSON.stringify(cartItems));
       }
 
-      // Actualizar el carrito
       updateCart();
     } else if (event.target.classList.contains("close")) {
       const item = event.target.parentNode.parentNode;
@@ -85,27 +78,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
 function removeFromCart(title) {
   cartItems = cartItems.filter((item) => item.titulo !== title);
   localStorage.setItem("cart", JSON.stringify(cartItems));
   updateCart();
 }
 
-containerCart.addEventListener("click", function (event) {
-  if (event.target.classList.contains("close")) {
-    const item = event.target.parentNode.parentNode;
-    const title = item.querySelector(".text-muted").textContent;
-    removeFromCart(title);
-  }
-});
+
 
 function innerSubtotal(subtotal) {
   return `
     <div class="d-flex align-items-center justify-content-between mb-2">
       <p>Subtotal</p>
-      <p><span></span>$${subtotal.toFixed(2)}</p>
+      <p><span></span>$${subtotal}</p>
     </div> 
   `;
 }
@@ -113,7 +98,7 @@ function innerSubtotal(subtotal) {
 function innerTotal(total) {
   return `
     <div class="col">TOTAL</div>
-    <div class="col text-right">$${total.toFixed(2)}</div>
+    <div class="col text-right">$${total}</div>
   `;
 }
 
@@ -125,8 +110,6 @@ function carroTemplate(data) {
       </div>
       <div class="col">
         <div class="row text-muted">${data.titulo}</div>
-        <div class="row">Volumen 1</div>
-        <div class="row">Editorial Planeta Comic</div>
       </div>
       <div class="col">
         <a class="min" href="#">-</a>

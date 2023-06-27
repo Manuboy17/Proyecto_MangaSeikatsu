@@ -8,10 +8,34 @@ body {
     margin-left: 15px;
 }
 .img-carrusel {
-    width: 100vw;
     height: 500px;
-}
-
+  }
+  
+  @media (max-width: 768px) {
+    .img-carrusel {
+      width: 100vw;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .img-carrusel {
+      width: 80vw;
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1200px) {
+    .img-carrusel {
+      width: 40vw;
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .img-carrusel {
+      width: 20vw;
+    }
+  }
+  
+  
 .control{
     text-decoration: none;
 }
