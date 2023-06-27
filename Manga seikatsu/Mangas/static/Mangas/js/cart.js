@@ -29,40 +29,63 @@ function updateCart() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const minLinks = document.querySelectorAll(".min");
+  updateCart();
 
-  minLinks.forEach(function (minLink) {
-    minLink.addEventListener("click", function (event) {
+  containerCart.addEventListener("click", function (event) {
+    if (event.target.classList.contains("min")) {
       event.preventDefault();
 
-      const container = minLink.closest(".col");
+      const container = event.target.closest(".col");
       const centerValue = container.querySelector(".border");
 
       let value = parseInt(centerValue.innerText);
-
       value = Math.max(value - 1, 1);
 
       centerValue.innerText = value.toString();
-    });
-  });
 
-  const plusLinks = document.querySelectorAll(".plus");
+      // Obtener el índice del elemento en cartItems
+      const index = Array.from(containerCart.children).indexOf(container.parentNode);
 
-  plusLinks.forEach(function (plusLink) {
-    plusLink.addEventListener("click", function (event) {
+      // Actualizar la cantidad en cartItems
+      if (index !== -1 && index < cartItems.length) {
+        cartItems[index].cantidad = value;
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+      }
+
+      // Actualizar el carrito
+      updateCart();
+    } else if (event.target.classList.contains("plus")) {
       event.preventDefault();
 
-      const container = plusLink.closest(".col");
+      const container = event.target.closest(".col");
       const centerValue = container.querySelector(".border");
 
       let value = parseInt(centerValue.innerText);
-
       value += 1;
 
       centerValue.innerText = value.toString();
-    });
+
+      // Obtener el índice del elemento en cartItems
+      const index = Array.from(containerCart.children).indexOf(container.parentNode);
+
+      // Actualizar la cantidad en cartItems
+      if (index !== -1 && index < cartItems.length) {
+        cartItems[index].cantidad = value;
+        localStorage.setItem("cart", JSON.stringify(cartItems));
+      }
+
+      // Actualizar el carrito
+      updateCart();
+    } else if (event.target.classList.contains("close")) {
+      const item = event.target.parentNode.parentNode;
+      const title = item.querySelector(".text-muted").textContent;
+      removeFromCart(title);
+    }
   });
 });
+
+
+
 
 function removeFromCart(title) {
   cartItems = cartItems.filter((item) => item.titulo !== title);
