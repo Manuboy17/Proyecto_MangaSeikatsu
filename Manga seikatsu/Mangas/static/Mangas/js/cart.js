@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
       value = Math.max(value - 1, 1);
 
       centerValue.innerText = value.toString();
-      updateCart();
     });
   });
 
@@ -61,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
       value += 1;
 
       centerValue.innerText = value.toString();
-      updateCart();
     });
   });
 });
