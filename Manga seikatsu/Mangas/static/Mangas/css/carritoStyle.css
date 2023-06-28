@@ -209,10 +209,3 @@ a:hover {
 .nav button{
     height: 30px;
 }
-.validation-message {
-    display: none;
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  

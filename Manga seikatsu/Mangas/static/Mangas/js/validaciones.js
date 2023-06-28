@@ -138,20 +138,3 @@ $('#btn-pago').click(function() {
     let nombreDueño = $('#nombreDueño') .val()
 
 })
-
-var fechaVencimientoInput = document.getElementById("fechaVencimiento");
-var cvvInput = document.getElementById("cvv");
-var validationMessage = document.getElementById("validationMessage");
-
-fechaVencimientoInput.addEventListener("input", validateInputs);
-cvvInput.addEventListener("input", validateInputs);
-
-function validateInputs() {
-  if (fechaVencimientoInput.validity.valueMissing || cvvInput.validity.valueMissing) {
-    validationMessage.textContent = "Este campo es ";
-    validationMessage.style.display = "block";
-  } else {
-    validationMessage.textContent = "";
-    validationMessage.style.display = "none";
-  }
-}
