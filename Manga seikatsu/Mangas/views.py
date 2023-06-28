@@ -31,3 +31,8 @@ def generar_estrellas(rating):
         estrellas_html += '<li class="far fa-star"></li>'  
     return estrellas_html
 
+def login(request):
+    return render(request,'Mangas/login.html')
+
+def registro(request):
+    return render(request,'Mangas/registro.html')

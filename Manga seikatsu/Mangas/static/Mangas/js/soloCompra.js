@@ -32,3 +32,4 @@ btnCompra.addEventListener("click", function (e) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
 });
+
