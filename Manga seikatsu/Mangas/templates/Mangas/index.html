@@ -33,11 +33,12 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <img
+          <a href="{% url 'index' %}"><img
             src="{% static 'Mangas/img/Logo.png' %}"
             class="icon"
             alt="Manga seikatsu"
           />
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -110,7 +111,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                        <a class="dropdown-item" href="{% url 'login'%}">Iniciar sesión</a>
                     </li>
                 </ul>
               </li>
