@@ -33,11 +33,12 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a href="{% url 'index' %}"><img
-            src="{% static 'Mangas/img/Logo.png' %}"
-            class="icon"
-            alt="Manga seikatsu"
-          />
+          <a href="{% url 'index' %}"
+            ><img
+              src="{% static 'Mangas/img/Logo.png' %}"
+              class="icon"
+              alt="Manga seikatsu"
+            />
           </a>
           <button
             class="navbar-toggler"
@@ -52,7 +53,7 @@
           </button>
 
           <div class="collapse navbar-collapse bg-dark" id="navbarColor02">
-            <ul class="navbar-nav  p-3">
+            <ul class="navbar-nav p-3">
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'index' %}"
                   >Inicio
@@ -73,7 +74,8 @@
                   role="button"
                   aria-haspopup="true"
                   aria-expanded="false"
-                  >Categorias</a>
+                  >Categorias</a
+                >
 
                 <div class="dropdown-menu">
                   <div class="dropdown-divider"></div>
@@ -85,6 +87,13 @@
                   <div class="dropdown-divider"></div>
                 </div>
               </li>
+              {% if user.is_authenticated and user.is_staff%}
+                <li class="nav-item">
+                  <a class="nav-link active" href="#"
+                    >Registro Manga
+                  </a>
+                </li>
+              {% endif %}
             </ul>
 
             <ul class="navbar-nav d-flex flex-row ml-auto">
@@ -100,21 +109,49 @@
                   </button>
                 </form>
               </li> -->
-              
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user mx-1"></i> Perfil </a>
-                <!-- Dropdown menu -->
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li>
-                        <a class="dropdown-item" href="#">Mi cuenta</a>
-                    </li>
 
-                    <li>
-                        <a class="dropdown-item" href="{% url 'login'%}">Iniciar sesión</a>
-                    </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-user mx-1"></i>
+                  {% if user.is_authenticated %} {{ user.username }} {% else %}
+                  Perfil {% endif %}
+                </a>
+                <!-- Dropdown menu -->
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item" href="#">Mi cuenta</a>
+                  </li>
+                  {% if user.is_authenticated %} {% if user.is_staff%}
+                  <li>
+                    <a class="dropdown-item" href="#">Moderacion</a>
+                  </li>
+                  {% endif %}
+                  <li>
+                    <a class="dropdown-item" href="{% url 'logout' %}"
+                      >Cerrar sesión</a
+                    >
+                  </li>
+                  {% else %}
+                  <li>
+                    <a class="dropdown-item" href="{% url 'login' %}"
+                      >Iniciar sesión</a
+                    >
+                  </li>
+
+                  {% endif %}
                 </ul>
               </li>
+
               <li>
                 <a href="{% url 'carrito'%}" class="basket-2 ml-3 mb-3">
                   <svg
@@ -190,7 +227,7 @@
 
       <section class="manga-containter">
         <div
-          class="row row-cols-1  row-cols-md-3 row-cols-lg-5 justify-content-center"
+          class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center"
           id="card-container"
         >
           {% for manga in mangas%}
@@ -212,7 +249,9 @@
                 </a>
                 <ul class="product-links">
                   <li>
-                    <a href="" class="add-cart"><i class="fa fa-shopping-cart add-cart"></i></a>
+                    <a href="" class="add-cart"
+                      ><i class="fa fa-shopping-cart add-cart"></i
+                    ></a>
                   </li>
                   <li>
                     <a href="#"><i class="far fa-heart"></i></a>

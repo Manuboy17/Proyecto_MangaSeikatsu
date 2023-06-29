@@ -27,10 +27,10 @@ $.validator.addMethod('validarCorreo', function(value, e, parametro){
 
 $('#form').validate({
     rules: {
-        email: {
+        logUsuario: {
             required: true,
-            email: true,
-            validarCorreo: 'gmail.com'
+            minlength: 4,
+            maxlength: 30
         },
         contraseña: {
             required: true,
@@ -114,7 +114,7 @@ $('#logSub').click(function() {
     if($('#form').valid() == false){
         return
     }
-    let email = $('#typeEmailX').val()
+    let usuario = $('#logNombre').val()
     let password = $('#typePasswordX').val()
 })
 $('#regSub').click(function() {
@@ -131,10 +131,10 @@ $('#btn-pago').click(function() {
     if($('#form-pago').valid() == false){
         return
     }
-    let emailPago = $('#emailCarrito') .val()
-    let nroTarjeta = $('#nroTarjeta') .val()
-    let fechaVencimiento = $('#fechaVencimiento') .val()
+    let emailPago = $('#emailCarrito').val()
+    let nroTarjeta = $('#nroTarjeta').val()
+    let fechaVencimiento = $('#fechaVencimiento').val()
     let cvv = $('#cvv') .val()
-    let nombreDueño = $('#nombreDueño') .val()
+    let nombreDueño = $('#nombreDueño').val()
 
 })

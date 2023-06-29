@@ -9,8 +9,9 @@ body {
 }
 .img-carrusel {
     height: 500px;
+    width: 100%;
   }
-  
+/*   
   @media (max-width: 768px) {
     .img-carrusel {
       width: 100vw;
@@ -33,7 +34,7 @@ body {
     .img-carrusel {
       width: 20vw;
     }
-  }
+  } */
   
   
 .control{
@@ -122,9 +123,7 @@ label.error {
     padding: 5px;
     color: yellow;
 }
-input.error {
-    border: 10px solid yellow;
-}
+
 .cont-form {
     width: 100%;
     height: 80vh;

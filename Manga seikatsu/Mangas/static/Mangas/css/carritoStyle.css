@@ -209,3 +209,8 @@ a:hover {
 .nav button{
     height: 30px;
 }
+label.error {
+    padding: 5px;
+    color: red;
+}
+

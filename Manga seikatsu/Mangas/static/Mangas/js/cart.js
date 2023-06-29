@@ -2,7 +2,7 @@ const containerCart = document.getElementById("detail-cart");
 const subTotal = document.querySelector(".subtotal");
 const montoTotal = document.querySelector(".total");
 
-let cartItems = localStorage.getItem("cart");
+let cartItems = sessionStorage.getItem("cart");
 cartItems = cartItems ? JSON.parse(cartItems) : [];
 
 function updateCart() {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (index !== -1 && index < cartItems.length) {
         cartItems[index].cantidad = value;
-        localStorage.setItem("cart", JSON.stringify(cartItems));
+        sessionStorage.setItem("cart", JSON.stringify(cartItems));
       }
 
       updateCart();
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (index !== -1 && index < cartItems.length) {
         cartItems[index].cantidad = value;
-        localStorage.setItem("cart", JSON.stringify(cartItems));
+        sessionStorage.setItem("cart", JSON.stringify(cartItems));
       }
 
       updateCart();
@@ -80,10 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function removeFromCart(title) {
   cartItems = cartItems.filter((item) => item.titulo !== title);
-  localStorage.setItem("cart", JSON.stringify(cartItems));
+  sessionStorage.setItem("cart", JSON.stringify(cartItems));
   updateCart();
 }
-
 
 
 function innerSubtotal(subtotal) {

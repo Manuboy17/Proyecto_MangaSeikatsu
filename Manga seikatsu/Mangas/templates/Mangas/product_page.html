@@ -32,11 +32,13 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <img
-            src="{% static 'Mangas/img/Logo.png' %}"
-            class="icon"
-            alt="Manga seikatsu"
-          />
+          <a href="{% url 'index' %}"
+            ><img
+              src="{% static 'Mangas/img/Logo.png' %}"
+              class="icon"
+              alt="Manga seikatsu"
+            />
+          </a>
           <button
             class="navbar-toggler"
             type="button"
@@ -50,7 +52,7 @@
           </button>
 
           <div class="collapse navbar-collapse bg-dark" id="navbarColor02">
-            <ul class="navbar-nav me-auto p-3">
+            <ul class="navbar-nav p-3">
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'index' %}"
                   >Inicio
@@ -63,55 +65,97 @@
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Nosotros</a>
               </li>
-              <!-- <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    >Categorias</a
-                  >
-                  <div class="dropdown-menu">
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Shonen</a>
-                    <a class="dropdown-item" href="#">Shoujo</a>
-                    <a class="dropdown-item" href="#">Seinen</a>
-                    <a class="dropdown-item" href="#">Mecha</a>
-                    <a class="dropdown-item" href="#">Spokon</a>
-                    <div class="dropdown-divider"></div>
-                  </div>
-                </li> -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Categorias</a
+                >
+
+                <div class="dropdown-menu">
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Shonen</a>
+                  <a class="dropdown-item" href="#">Shoujo</a>
+                  <a class="dropdown-item" href="#">Kodomo</a>
+                  <a class="dropdown-item" href="#">Seinen</a>
+                  <a class="dropdown-item" href="#">Josei</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </li>
             </ul>
-            <form class="d-flex mb-3">
-              <input
-                class="form-control me-sm-2"
-                type="search"
-                placeholder="Buscar"
-              />
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-                Buscar
-              </button>
-            </form>
-            <a href="{% url 'carrito'%}" class="basket-2 ml-3 mb-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                class="bi bi-bag"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
-                />
-              </svg>
-            </a>
+
+            <ul class="navbar-nav d-flex flex-row ml-auto">
+              <!-- <li>
+                <form class="d-flex mb-3">
+                  <input
+                    class="form-control me-sm-2"
+                    type="search"
+                    placeholder="Buscar"
+                  />
+                  <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                    Buscar
+                  </button>
+                </form>
+              </li> -->
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-user mx-1"></i>
+                  {% if user.is_authenticated %}
+                    {{ user.username }}
+                  {% else %}
+                    Perfil
+                  {% endif %}
+                </a>
+                <!-- Dropdown menu -->
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">Mi cuenta</a>
+                  </li>
+                  {% if user.is_authenticated %}
+                    <li>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a>
+                    </li>
+                  {% else %}
+                    <li>
+                      <a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a>
+                    </li>
+                  {% endif %}
+                </ul>
+              </li>
+              
+              <li>
+                <a href="{% url 'carrito'%}" class="basket-2 ml-3 mb-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
-    </header>
+    </header
 
     <div id="cont-manga" class="row justify-content-center">
       <div class="col-lg-7 cont-img">

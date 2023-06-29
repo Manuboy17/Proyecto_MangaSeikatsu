@@ -1,11 +1,13 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 # Create your models here.
 
 class Usuario(models.Model):
-    nombre = models.CharField(max_length=30)
-    email = models.CharField(unique=True,max_length=60,blank=True,null=True)
+    nombre = models.CharField(unique=True, max_length=30)
+    email = models.CharField(unique=True, max_length=60, blank=True, null=True)
     constrasena =  models.CharField(max_length=20)
+    def __str__(self):
+        return self.nombre
 
 class Categoria(models.Model):  
     id_categoria= models.IntegerField(db_column='id_categoria',default=0,primary_key=True)

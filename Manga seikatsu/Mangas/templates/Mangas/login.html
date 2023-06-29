@@ -16,7 +16,7 @@
     />
     <link rel="stylesheet" href="{% static 'Mangas/css/bootswatch.css' %}" />
     <link rel="stylesheet" href="{% static 'Mangas/css/style.css' %}" />
-    
+
     <script
       src="https://kit.fontawesome.com/928971cd2d.js"
       crossorigin="anonymous"
@@ -32,11 +32,12 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a href="{% url 'index' %}"><img
-            src="{% static 'Mangas/img/Logo.png' %}"
-            class="icon"
-            alt="Manga seikatsu"
-          />
+          <a href="{% url 'index' %}"
+            ><img
+              src="{% static 'Mangas/img/Logo.png' %}"
+              class="icon"
+              alt="Manga seikatsu"
+            />
           </a>
           <button
             class="navbar-toggler"
@@ -51,7 +52,7 @@
           </button>
 
           <div class="collapse navbar-collapse bg-dark" id="navbarColor02">
-            <ul class="navbar-nav  p-3">
+            <ul class="navbar-nav p-3">
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'index' %}"
                   >Inicio
@@ -72,7 +73,8 @@
                   role="button"
                   aria-haspopup="true"
                   aria-expanded="false"
-                  >Categorias</a>
+                  >Categorias</a
+                >
 
                 <div class="dropdown-menu">
                   <div class="dropdown-divider"></div>
@@ -99,21 +101,40 @@
                   </button>
                 </form>
               </li> -->
-              
+
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user mx-1"></i> Perfil </a>
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-user mx-1"></i>
+                  {% if user.is_authenticated %}
+                    {{ user.username }}
+                  {% else %}
+                    Perfil
+                  {% endif %}
+                </a>
                 <!-- Dropdown menu -->
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">Mi cuenta</a>
+                  </li>
+                  {% if user.is_authenticated %}
                     <li>
-                        <a class="dropdown-item" href="#">Mi cuenta</a>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a>
                     </li>
-
+                  {% else %}
                     <li>
-                        <a class="dropdown-item" href="{% url 'login'%}">Iniciar sesión</a>
+                      <a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a>
                     </li>
+                  {% endif %}
                 </ul>
               </li>
+              
               <li>
                 <a href="{% url 'carrito'%}" class="basket-2 ml-3 mb-3">
                   <svg
@@ -134,8 +155,9 @@
           </div>
         </div>
       </nav>
-    </header>
+    </header
 
+    {% block content %}
     <section class="vh-80 gradient-custom">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -147,16 +169,19 @@
                   <p class="text-white-50 mb-5">
                     Por favor ingresa tu usuario y contraseña
                   </p>
-                  <form action="" id="form">
+                  <form id="form" method="POST">
+                    {% csrf_token %}
                     <div class="form-outline form-white mb-4">
                       <input
                         type="text"
-                        id="typeNombre"
-                        placeholder="Nombre"
-                        name="regNombre"
+                        id="logNombre"
+                        placeholder="Usuario"
+                        name="logUsuario"
                         class="form-control form-control-lg"
                       />
-                      <label class="form-label" for="typeNombre">Nombre de usuario</label>
+                      <label class="form-label" for="typeNombre"
+                        >Nombre de usuario</label
+                      >
                     </div>
 
                     <div class="form-outline form-white mb-4">
@@ -186,9 +211,9 @@
                   </p>
                 </div>
                 <div>
-                  <p class="mb-0 ">
+                  <p class="mb-0">
                     ¿No tienes cuenta?
-                    <a href="{% url 'registro'%}" class="text-white-50 fw-bold"
+                    <a href="{% url 'registro' %}" class="text-white-50 fw-bold"
                       >Registrate</a
                     >
                   </p>
@@ -199,6 +224,7 @@
         </div>
       </div>
     </section>
+    {% endblock %}
 
     <footer
       class="text-center text-white"
@@ -280,6 +306,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
     <!-- Custom scripts -->
 
-    <script src="js/validaciones.js"></script>
+    <script src="{% static 'Mangas/js/validaciones.js' %}"></script>
   </body>
 </html>
