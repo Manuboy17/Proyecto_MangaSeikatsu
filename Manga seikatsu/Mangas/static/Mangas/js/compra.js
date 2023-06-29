@@ -16,7 +16,7 @@ cards.forEach(function (card) {
       cantidad: 1,
     };
 
-    let cartItems = sessionStorage.getItem("cart");
+    let cartItems = localStorage.getItem("cart");
     let cart = [];
     if (cartItems) {
       cart = JSON.parse(cartItems);
@@ -32,7 +32,7 @@ cards.forEach(function (card) {
       cart.push(cartObject);
     }
 
-    sessionStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   });
 });
 

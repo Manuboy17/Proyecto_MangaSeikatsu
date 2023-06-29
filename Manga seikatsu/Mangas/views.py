@@ -3,6 +3,7 @@ from .models import Manga, Usuario
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 
 def login_user(request):
     if request.method == "POST":
@@ -14,7 +15,7 @@ def login_user(request):
             return redirect('index')
         else:
             messages.error(request, "Has tenido un error al iniciar sesión")
-            return redirect('login_user')
+            return HttpResponseRedirect('.')
     else:
         return render(request, 'Mangas/login.html')  
     

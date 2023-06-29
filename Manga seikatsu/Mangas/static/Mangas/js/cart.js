@@ -1,8 +1,11 @@
-const containerCart = document.getElementById("detail-cart");
-const subTotal = document.querySelector(".subtotal");
-const montoTotal = document.querySelector(".total");
+const containerCart = document.getElementById("detail-cart")
+const subTotal = document.querySelector(".subtotal")
+const montoTotal = document.querySelector(".total")
+const btnCompra = document.getElementById("btn-pago")
 
-let cartItems = sessionStorage.getItem("cart");
+
+
+let cartItems = localStorage.getItem("cart");
 cartItems = cartItems ? JSON.parse(cartItems) : [];
 
 function updateCart() {
@@ -27,9 +30,14 @@ function updateCart() {
   subTotal.innerHTML = innerSubtotal(subtotal);
   montoTotal.innerHTML = innerTotal(subtotal);
 }
+btnCompra.addEventListener("click", function() {
+  localStorage.clear();
+  updateCart();
+})
 
 document.addEventListener("DOMContentLoaded", function () {
   updateCart();
+
   containerCart.addEventListener("click", function (event) {
     if (event.target.classList.contains("min")) {
       event.preventDefault();
@@ -46,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (index !== -1 && index < cartItems.length) {
         cartItems[index].cantidad = value;
-        sessionStorage.setItem("cart", JSON.stringify(cartItems));
+        localStorage.setItem("cart", JSON.stringify(cartItems));
       }
 
       updateCart();
@@ -65,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (index !== -1 && index < cartItems.length) {
         cartItems[index].cantidad = value;
-        sessionStorage.setItem("cart", JSON.stringify(cartItems));
+        localStorage.setItem("cart", JSON.stringify(cartItems));
       }
 
       updateCart();
@@ -73,17 +81,22 @@ document.addEventListener("DOMContentLoaded", function () {
       const item = event.target.parentNode.parentNode;
       const title = item.querySelector(".text-muted").textContent;
       removeFromCart(title);
-    }
+    }   
   });
+  
 });
 
 
 function removeFromCart(title) {
   cartItems = cartItems.filter((item) => item.titulo !== title);
-  sessionStorage.setItem("cart", JSON.stringify(cartItems));
+  localStorage.setItem("cart", JSON.stringify(cartItems));
   updateCart();
 }
 
+btnCompra.addEventListener("click", function() {
+  localStorage.clear();
+  updateCart();
+})
 
 function innerSubtotal(subtotal) {
   return `
