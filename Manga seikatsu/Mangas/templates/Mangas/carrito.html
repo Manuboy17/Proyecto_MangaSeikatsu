@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+  <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,6 +27,7 @@
       rel="stylesheet"
     />
   </head>
+
 
   <body>
     <header>
@@ -85,6 +87,7 @@
                   <div class="dropdown-divider"></div>
                 </div>
               </li>
+              
             </ul>
 
             <ul class="navbar-nav d-flex flex-row ml-auto">
@@ -111,29 +114,48 @@
                   aria-expanded="false"
                 >
                   <i class="fas fa-user mx-1"></i>
-                  {% if user.is_authenticated %}
-                    {{ user.username }}
+                  {% if user.is_authenticated %} 
+                      {{ user.username }} 
                   {% else %}
-                    Perfil
+                      Perfil 
                   {% endif %}
                 </a>
                 <!-- Dropdown menu -->
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="navbarDropdown"
+                >
                   <li>
                     <a class="dropdown-item" href="#">Mi cuenta</a>
                   </li>
-                  {% if user.is_authenticated %}
-                    <li>
-                      <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a>
-                    </li>
+                  {% if user.is_authenticated %} 
+                  {% if user.is_staff%}
+
+                  <li>
+                    <a class="dropdown-item" href="{%url 'addManga'%}">Añadir Manga</a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="{%url 'reporte_mangas'%}">Reporte Mangas</a>
+                  </li>
+                  {% endif %}
+                  
+                  <li>
+                    <a class="dropdown-item" href="{% url 'logout' %}"
+                      >Cerrar sesión</a
+                    >
+                  </li>
                   {% else %}
-                    <li>
-                      <a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a>
-                    </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'login' %}"
+                      >Iniciar sesión</a
+                    >
+                  </li>
+
                   {% endif %}
                 </ul>
               </li>
-              
+
               <li>
                 <a href="{% url 'carrito'%}" class="basket-2 ml-3 mb-3">
                   <svg
@@ -154,8 +176,8 @@
           </div>
         </div>
       </nav>
-    </header
-
+    </header>
+    <br><br>
     <!-- CARRITO -->
     <div class="card">
       <div class="row">

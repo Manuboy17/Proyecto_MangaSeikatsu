@@ -66,7 +66,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="#footer">Nosotros</a>
               </li>
-              <li class="nav-item dropdown">
+              <!-- <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
                   data-bs-toggle="dropdown"
@@ -86,14 +86,8 @@
                   <a class="dropdown-item" href="#">Josei</a>
                   <div class="dropdown-divider"></div>
                 </div>
-              </li>
-              {% if user.is_authenticated and user.is_staff%}
-                <li class="nav-item">
-                  <a class="nav-link active" href="#"
-                    >Registro Manga
-                  </a>
-                </li>
-              {% endif %}
+              </li> -->
+              
             </ul>
 
             <ul class="navbar-nav d-flex flex-row ml-auto">
@@ -120,8 +114,11 @@
                   aria-expanded="false"
                 >
                   <i class="fas fa-user mx-1"></i>
-                  {% if user.is_authenticated %} {{ user.username }} {% else %}
-                  Perfil {% endif %}
+                  {% if user.is_authenticated %} 
+                      {{ user.username }} 
+                  {% else %}
+                      Perfil 
+                  {% endif %}
                 </a>
                 <!-- Dropdown menu -->
                 <ul
@@ -131,11 +128,18 @@
                   <li>
                     <a class="dropdown-item" href="#">Mi cuenta</a>
                   </li>
-                  {% if user.is_authenticated %} {% if user.is_staff%}
+                  {% if user.is_authenticated %} 
+                  {% if user.is_staff%}
+
                   <li>
-                    <a class="dropdown-item" href="#">Moderacion</a>
+                    <a class="dropdown-item" href="{%url 'addManga'%}">Añadir Manga</a>
+                  </li>
+
+                  <li>
+                    <a class="dropdown-item" href="{%url 'reporte_mangas'%}">Reporte Mangas</a>
                   </li>
                   {% endif %}
+                  
                   <li>
                     <a class="dropdown-item" href="{% url 'logout' %}"
                       >Cerrar sesión</a
