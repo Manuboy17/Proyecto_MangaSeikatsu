@@ -14,11 +14,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'Mangas/css/carritoStyle.css' %}" />
-    <link rel="stylesheet" href="{% static 'Mangas/css/bootswatch.css' %}" />
-    
-    
-    
-    
+    <link rel="stylesheet" href="{% static 'Mangas/css/bootswatch.css' %}" />   
     <script
       src="https://kit.fontawesome.com/928971cd2d.js"
       crossorigin="anonymous"
@@ -32,14 +28,15 @@
   </head>
 
   <body>
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a href="{% url 'index' %}"><img
-            src="{% static 'Mangas/img/Logo.png' %}"
-            class="icon"
-            alt="Manga seikatsu"
-          />
+          <a href="{% url 'index' %}"
+            ><img
+              src="{% static 'Mangas/img/Logo.png' %}"
+              class="icon"
+              alt="Manga seikatsu"
+            />
           </a>
           <button
             class="navbar-toggler"
@@ -54,7 +51,7 @@
           </button>
 
           <div class="collapse navbar-collapse bg-dark" id="navbarColor02">
-            <ul class="navbar-nav  p-3">
+            <ul class="navbar-nav p-3">
               <li class="nav-item">
                 <a class="nav-link active" href="{% url 'index' %}"
                   >Inicio
@@ -75,7 +72,8 @@
                   role="button"
                   aria-haspopup="true"
                   aria-expanded="false"
-                  >Categorias</a>
+                  >Categorias</a
+                >
 
                 <div class="dropdown-menu">
                   <div class="dropdown-divider"></div>
@@ -102,21 +100,40 @@
                   </button>
                 </form>
               </li> -->
-              
+
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user mx-1"></i> Perfil </a>
+                <a
+                  class="nav-link dropdown-toggle text-white"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-user mx-1"></i>
+                  {% if user.is_authenticated %}
+                    {{ user.username }}
+                  {% else %}
+                    Perfil
+                  {% endif %}
+                </a>
                 <!-- Dropdown menu -->
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#">Mi cuenta</a>
+                  </li>
+                  {% if user.is_authenticated %}
                     <li>
-                        <a class="dropdown-item" href="#">Mi cuenta</a>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a>
                     </li>
-
+                  {% else %}
                     <li>
-                        <a class="dropdown-item" href="#">Cerrar sesión</a>
+                      <a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a>
                     </li>
+                  {% endif %}
                 </ul>
               </li>
+              
               <li>
                 <a href="{% url 'carrito'%}" class="basket-2 ml-3 mb-3">
                   <svg
@@ -137,6 +154,7 @@
           </div>
         </div>
       </nav>
+    </header
 
     <!-- CARRITO -->
     <div class="card">
@@ -149,13 +167,12 @@
               </div>
             </div>
           </div>
-          <div class="row border-top border-bottom" id="detail-cart">
-            
-          </div>
+          <div class="row border-top border-bottom" id="detail-cart"></div>
 
           <div class="back-to-shop">
-            <a href="{% url 'index' %}">&leftarrow;
-              <span >Volver a comprar</span>
+            <a href="{% url 'index' %}"
+              >&leftarrow;
+              <span>Volver a comprar</span>
             </a>
           </div>
         </div>
@@ -163,57 +180,116 @@
           <div>
             <h5><b>Resumen de compra</b></h5>
           </div>
-              <form action="" id="form-pago">
-                    <div class="mb-3">
-                        <p class="dis fw-bold mb-2">Email</p>
-                        <input class="form-control" type="email" id="emailCarrito" name="emailCarrito" placeholder="luke@skywalker.com">
-                    </div>
-                    <div>
-                        <p class="dis fw-bold mb-2">Detalles de tarjeta</p>
-                        <div class="d-flex align-items-center justify-content-between card-atm border rounded">
-                            
-                            <input type="text" class="form-control" name="nroTarjeta" id="nroTarjeta" placeholder="Detalle">
-                            <div class="d-flex w-50">
-                                <input type="text" class="form-control px-0 ml-1 mr-1" name="fechaVencimiento" id="fechaVencimiento" placeholder="MM/YY">
-                                <input type="password" maxlength=3 class="form-control px-0" name="cvv" id="cvv" placeholder="CVV">
-                            </div>
-                        </div>
-                        <div class="my-3 cardname">
-                            <p class="dis fw-bold mb-2">Nombre</p>
-                            <input class="form-control" name="nombreDueño" id="nombreDueño" placeholder="Nombre Portador" type="text">
-                        </div>
-                        <div class="address">
-                            <p class="dis fw-bold mb-3">Direccion</p>
-                            <select class="form-select m-1" name="region" id="region" aria-label="Default select example">
-                                <option value="null">Seleccione</option>
-                            </select>
-                            <div class="d-flex">
-                                <input class="form-control zip m-1" type="text" name="zipCode" placeholder="codigo postal">
-                                <select class="form-select m-1" name="comuna" id="comuna" aria-label="Default select example">
-                                  <option value="null">Seleccione</option>
-                                </select>
-                            </div>
-                            
-                            <div id="subtotal" class="d-flex flex-column dis subtotal"> 
+          <form action="" id="form-pago">
+            <div class="mb-3">
+              <p class="dis fw-bold mb-2">Email</p>
+              <input
+                class="form-control"
+                type="email"
+                id="emailCarrito"
+                name="emailCarrito"
+                placeholder="luke@skywalker.com"
+                required
+              />
+            </div>
+            <div>
+              <p class="dis fw-bold mb-2">Detalles de tarjeta</p>
+              <div
+                class="d-flex align-items-center justify-content-between card-atm border rounded"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  name="nroTarjeta"
+                  id="nroTarjeta"
+                  placeholder="Detalle"
+                  required
+                />
+                <div class="d-flex w-50">
+                  <input
+                    type="text"
+                    class="form-control px-0 ml-1 mr-1"
+                    name="fechaVencimiento"
+                    id="fechaVencimiento"
+                    maxlength="5"
+                    placeholder="MM/YY"
+                  />
+                  <input
+                    type="password"
+                    maxlength="3"
+                    class="form-control px-0"
+                    name="cvv"
+                    id="cvv"
+                    placeholder="CVV"
+                  />
+                  <div class="validation-message" id="validationMessage"></div>
+                </div>
+              </div>
+              <div class="my-3 cardname">
+                <p class="dis fw-bold mb-2">Nombre</p>
+                <input
+                  class="form-control"
+                  name="nombreDueño"
+                  id="nombreDueño"
+                  placeholder="Nombre Portador"
+                  type="text"
+                  required
+                />
+              </div>
+              <div class="address">
+                <p class="dis fw-bold mb-3">Direccion</p>
+                <div class="my-3 cardname">
+                  <input
+                    class="form-control"
+                    name="calle"
+                    id="calle"
+                    placeholder="calle"
+                    type="text"
+                    required
+                  />
+                </div>
+                <select
+                  class="form-select m-1"
+                  name="region"
+                  id="region"
+                  aria-label="Default select example"
+                  required
+                >
+                  <option value="null">Seleccione</option>
+                </select>
+                <div class="d-flex">
+                  <input
+                    class="form-control zip m-1"
+                    type="text"
+                    name="zipCode"
+                    placeholder="codigo postal"
+                    required
+                  />
+                  <select
+                    class="form-select m-1"
+                    name="comuna"
+                    id="comuna"
+                    aria-label="Default select example"
+                  >
+                    <option value="null">Seleccione</option>
+                  </select>
+                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-          
-          <div id="total" class="row total" style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0">
-            
-          </div>
-
+                <div
+                  id="subtotal"
+                  class="d-flex flex-column dis subtotal"
+                ></div>
+              </div>
+            </div>
+          </form>
+          <div
+            id="total"
+            class="row total"
+            style="border-top: 1px solid rgba(0, 0, 0, 0.1); padding: 2vh 0"
+          ></div>
           <button class="btn" type="submit" id="btn-pago">PAGAR</button>
-
         </div>
       </div>
-    </div>
-
-    <div>
-
     </div>
 
     <footer

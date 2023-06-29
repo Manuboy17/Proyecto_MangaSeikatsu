@@ -13,7 +13,7 @@ cards.forEach(function (card) {
       titulo: titulo,
       precio: price,
       pic1: pic1,
-      cantidad: 1
+      cantidad: 1,
     };
 
     let cartItems = localStorage.getItem("cart");
@@ -22,50 +22,18 @@ cards.forEach(function (card) {
       cart = JSON.parse(cartItems);
     }
 
-    // Verificar si el manga ya está en el carrito
     var mangaIndex = cart.findIndex(function (item) {
       return item.titulo === titulo;
     });
 
     if (mangaIndex !== -1) {
-      // El manga ya existe en el carrito, incrementar la cantidad
       cart[mangaIndex].cantidad += 1;
     } else {
       cart.push(cartObject);
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-    console.log(cart);
   });
 });
 
 
-// function addToCart(event) {
-//   event.preventDefault();
-
-//   const title = event.target.getAttribute("alt");
-//   const pic1 = event.target.getAttribute("src");
-//   const price = event.target
-//     .closest(".product-grid")
-//     .querySelector(".price").textContent;
-
-//   const product = {
-//     title: title,
-//     pic1: pic1,
-//     price: price,
-//   };
-//   console.log(product);
-
-//   let cart = localStorage.getItem("cart");
-//   if (cart) {
-//     cart = JSON.parse(cart);
-//     cart.push(product);
-//   } else {
-//     cart = [product];
-//   }
-
-//   localStorage.setItem("cart", JSON.stringify(cart));
-//   alert("El producto se ha agregado al carrito de compra.");
-
-//   // window.location.href = "cart.html";
-// }
