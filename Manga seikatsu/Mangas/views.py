@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render, redirect
-from .models import Manga
+from .models import Manga, Categoria
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -24,11 +24,20 @@ def logout_user(request):
     return redirect('index')
 
 def index(request):
-    mangas = Manga.objects.all()
-
+    categorias = Categoria.objects.all()  # Retrieve all categories
+    
+    categoria_id = request.GET.get('categoria')  # Get the selected category ID from the request's GET parameters
+    
+    if categoria_id:
+        mangas = Manga.objects.filter(nombre_categoria=categoria_id)  # Filter mangas by the selected category ID
+    else:
+        mangas = Manga.objects.all()  # Retrieve all mangas if no category is selected
+    
     context = {
-        'mangas': mangas,
+        'categorias': categorias,
+        'mangas': mangas
     }
+    
     return render(request, 'Mangas/index.html', context)
 
 def registro_view(request):
@@ -50,18 +59,6 @@ def registro_view(request):
 
     return render(request, 'Usuario/registro.html')
 
-# def registro_view(request):
-#     if request.method != 'POST':
-#         return render(request, 'Mangas/registro.html')
-#     else:
-#         nombre = request.POST.get('regNombre')
-#         email = request.POST.get('regEmail')
-#         contraseña = request.POST.get('regContrasena')
-
-#         usuario = Usuario(nombre=nombre, email=email, constrasena=contraseña)
-#         usuario.save()
-
-#         return redirect('login')
 
 
 def product_page(request, card_id):
