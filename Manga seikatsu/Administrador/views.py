@@ -5,21 +5,31 @@ from Mangas.models import Manga,Categoria
 
 
 def reporte_mangas(request):
-    mangas = Manga.objects.all()
-    contexto = {'mangas': mangas}
-    return render(request, 'Administrador/reporte_mangas.html', contexto)
+    categorias = Categoria.objects.all()  # Retrieve all categories
+    
+    categoria_id = request.GET.get('categoria')  # Get the selected category ID from the request's GET parameters
+    
+    if categoria_id:
+        mangas = Manga.objects.filter(nombre_categoria=categoria_id)  # Filter mangas by the selected category ID
+    else:
+        mangas = Manga.objects.all()  # Retrieve all mangas if no category is selected
+    
+    context = {
+        'categorias': categorias,
+        'mangas': mangas
+    }
+    return render(request, 'Administrador/reporte_mangas.html', context)
 
 
 
 
 def addManga(request):
-    
     if request.method != 'POST':
         return render(request, 'Administrador/addManga.html')
     else:
         # Obtener los datos del formulario
         titulo = request.POST.get('titulo')
-        rating= request.POST.get('rating')
+        rating = request.POST.get('rating')
         editorial = request.POST.get('editorial')
         precio = request.POST.get('precio')
         autor = request.POST.get('autor')
@@ -32,15 +42,16 @@ def addManga(request):
         imagen2 = request.FILES.get('imagen2')
         nombre_categoria = request.POST.get('nombre_categoria')
 
-        # Crear una instancia del modelo Manga con los datos obtenidos
-        if nombre_categoria is None:
-        # Obtener una categoría por defecto
-            categoria_por_defecto = get_object_or_404(Categoria, nombre_categoria="Josei")
+        try:
+            # Intenta obtener la instancia de Categoria
+            categoria_id = int(nombre_categoria)
+            categoria = Categoria.objects.get(id=categoria_id)
+        except (Categoria.DoesNotExist, ValueError):
+            # Manejar el caso donde no se encuentra la categoría o se produce un error de valor
 
-        
-            nombre_categoria = categoria_por_defecto
+            # Redirigir o mostrar un mensaje de error, según tus necesidades
+            return HttpResponse("Error: Categoría no encontrada")
 
-        
         manga = Manga(
             codigo=codigo,
             titulo=titulo,
@@ -54,13 +65,13 @@ def addManga(request):
             descripcion=descripcion,
             pic1=imagen1,
             pic2=imagen2,
-            nombre_categoria=nombre_categoria
-
+            nombre_categoria=categoria
         )
 
         manga.save()
         # Redirigir a una página de éxito o a donde desees
         return redirect('reporte_mangas')
+
     
 def eliminarManga(request, id):
     manga = get_object_or_404(Manga, codigo=id)

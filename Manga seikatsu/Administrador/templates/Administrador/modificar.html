@@ -282,7 +282,7 @@
                             placeholder="Tamaño"
                             name="tamaño"
                             class="form-control form-control-lg"
-                            value="manga.tamaño"
+                            value="13 x 17"
                           />
                           <label class="form-label" for="tamaño">Tamaño</label>
                         </div>
@@ -314,9 +314,7 @@
                               rows="6"
                               placeholder="Descripcion"
                               name="descripcion"
-                            >
-                            {{manga.descripcion}}</textarea
-                            >
+                            >{{manga.descripcion}}</textarea>
                             <label class="form-label" for="descripcion"
                               >Descripcion</label
                             >
@@ -331,6 +329,7 @@
                             placeholder="rating"
                             name="rating"
                             class="form-control form-control-lg"
+                            value="{{manga.rating}}"
                           />
                           <label class="form-label" for="rating">rating</label>
                         </div>
@@ -340,11 +339,32 @@
                       <div class="col-md-4">
                         <div class="form-outline form-white mb-4">
                           <select name="nombre_categoria">
-                            <option value="5">Shonen</option>
-                            <option value="4">Shoujo</option>
-                            <option value="3">Kodomo</option>
-                            <option value="2">Seinen</option>
-                            <option value="1">Josei</option>
+                            {% if manga.id_categoria == 5 %}
+                              <option selected="selected" value="5">Shonen</option>
+                            {% else %}
+                              <option value="5">Shonen</option>
+                            {% endif %}
+                            {% if manga.id_categoria == 4 %}
+                              <option selected="selected" value="4">Shoujo</option>
+                            {% else %}
+                              <option value="4">Shoujo</option>
+                            {% endif %}
+                            {% if manga.id_categoria == 3 %}
+                              <option selected="selected" value="3">Kodomo</option>
+                            {% else %}
+                              <option value="3">Kodomo</option>
+                            {% endif %}
+                            {% if manga.id_categoria == 2 %}
+                              <option selected="selected" value="2">Seinen</option>
+                            {% else %}
+                              <option value="2">Seinen</option>
+                            {% endif %}
+                            {% if manga.id_categoria == 1 %}
+                              <option selected="selected" value="1">Josei</option>
+                            {% else %}
+                              <option value="1">Josei</option>
+                            {% endif %}
+                            
                           </select>
                           <label class="form-label" for="nombre_categoria"
                             >nombre categoria</label
@@ -374,7 +394,7 @@
                             id="imageUpload1"
                             name="imagen1"
                             class="form-control form-control-lg"
-                            value=""
+                            value="{{manga.pic1}}"
                           />
                           <label class="form-label" for="imageUpload1"
                             >Imagen primaria</label
@@ -388,6 +408,7 @@
                             id="imageUpload2"
                             name="imagen2"
                             class="form-control form-control-lg"
+                            value="{{manga.pic2}}"
                           />
                           <label class="form-label" for="imageUpload2"
                             >Imagen secundaria</label
